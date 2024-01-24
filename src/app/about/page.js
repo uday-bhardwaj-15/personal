@@ -1,24 +1,27 @@
-import React from 'react'
-import NavBar from '../../../components/NavBar'
-import Link from 'next/link'
+import React from "react";
+import Link from "next/link";
 const page = () => {
   return (
-    <div>
-      
-      <div className="hero min-h-screen bg-base-200">
-  <div className="hero-content flex-col lg:flex-row-reverse">
-    <img src="alexander-jawfox-tBAsD_VnxCY-unsplash.jpg" className="max-w-sm rounded-lg shadow-2xl hover:animate-pulse " />
-    
-    <div>
-      <h1 className="text-5xl font-bold">Box Office News!</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <Link className="btn btn-primary hover:bg-black animate-pulse " href="/">Home</Link>
+    <div className="bg-gradient-to-r from-purple-600 to-blue-500 min-h-screen flex justify-center items-center ">
+      <div className="text-white ">
+        <h1 className=" font-black text-center text-4xl mb-6 text-white ">
+          About Us
+        </h1>
+        <p className="text-lg mb-8 text-center text-white">
+          {" "}
+          Welcome to our incredible journey! We are a passionate team dedicated
+          to creating amazing things and making a difference in the world.
+        </p>
+        <div className="flex justify-center">
+          <Link
+            href="/feed"
+            className="bg-white text-blue-500 px-4 py-2 rounded-full hover:bg-blue-500 hover:text-white transition duration-300"
+          >
+            Feeds
+          </Link>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
-    </div>
-  )
-}
-
-export default page
+  );
+};
+export default page;

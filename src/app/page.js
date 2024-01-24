@@ -1,12 +1,17 @@
-'use client'
-import Image from 'next/image'
-import NavBar from '../../components/NavBar'
-import Link from 'next/link'
+"use client";
 
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { UserAuth } from "@/app/context/AuthContext";
+
+import { FaRegUserCircle } from "react-icons/fa";
+import { LuUserCog2 } from "react-icons/lu";
+import Login from "./components/Login";
 export default function Home() {
   return (
-  <div>Homre
-    
-  </div> 
-      )
+    <div className="scrollbar-hide ">
+      {" "}
+      <Login />
+    </div>
+  );
 }
