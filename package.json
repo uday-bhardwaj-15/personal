@@ -35,5 +35,9 @@
     "flowbite-typography": "^1.0.3",
     "postcss": "^8",
     "tailwindcss": "^3.3.3"
+  },
+  "engines": {
+    "node": "14.x"
   }
+  
 }

@@ -9,7 +9,7 @@ const page = () => {
   const [img, setImg] = useState("");
   const [imgUrl, setImgUrl] = useState([]);
   const handleChange = () => {
-    if (img !== null) {
+    if (img !== "") {
       const imgRef = ref(imageDb, `files/${v4()}`);
       uploadBytes(imgRef, img).then((value) => {
         console.log(value);
@@ -17,6 +17,8 @@ const page = () => {
           setImgUrl((data) => [...data, url]);
         });
       });
+    } else if (img == "") {
+      alert("Please Select File");
     }
   };
   useEffect(() => {
