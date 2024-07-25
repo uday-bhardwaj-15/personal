@@ -13,6 +13,7 @@ import {
   GoogleAuthProvider,
   getAuth,
 } from "firebase/auth";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
           <TopBar />
           <NextTopLoader />
           {children}
+          <Toaster position="top-center" reverseOrder={false} />
         </AuthContextProvider>
       </body>
     </html>

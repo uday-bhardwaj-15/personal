@@ -15,6 +15,7 @@ import {
 import { db } from "../firebase";
 import Edit from "../components/Edit";
 import { data } from "autoprefixer";
+import toast from "react-hot-toast";
 
 const page = () => {
   const { user, googleSignIn, logOut } = UserAuth();
@@ -102,7 +103,7 @@ const page = () => {
       seteditBox(false);
     } else if (title.length == 0 && des.length == 0) {
       fetch();
-      alert("The Input Is Empty");
+      toast.error("Field is empty!");
     }
   };
 

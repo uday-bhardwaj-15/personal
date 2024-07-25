@@ -5,10 +5,11 @@ import { UserAuth } from "@/app/context/AuthContext";
 
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase";
+import toast from "react-hot-toast";
 
 const page = () => {
-  const [title, setTitle] = useState();
-  const [des, setDes] = useState();
+  const [title, setTitle] = useState("");
+  const [des, setDes] = useState("");
   const { user } = UserAuth();
   const [loading, setLoading] = useState(true);
 
@@ -30,13 +31,12 @@ const page = () => {
       UserName: user.displayName,
     });
     if (adddata) {
-      alert("posted");
+      toast.success("Posted successfully");
       window.location.reload();
     } else {
-      alert("Sorry");
+      toast.error("Something went wrong!");
     }
   };
-  console.log(des);
 
   return (
     <div>
@@ -50,7 +50,6 @@ const page = () => {
             className="title bg-gray-100 border border-gray-300 p-4 mb-4 outline-none"
             name="title"
             required
-            spellcheck="false"
             placeholder="Title"
             type="text"
             value={title}
@@ -58,7 +57,6 @@ const page = () => {
           />
           <textarea
             className="description bg-gray-100 sec p-3 h-60 border border-gray-300 outline-none"
-            spellcheck="false"
             name="des"
             placeholder="Write Your Content Here.."
             onChange={(e) => setDes(e.target.value)}
@@ -67,7 +65,7 @@ const page = () => {
           ></textarea>
         </>
         <br />
-        <div class="buttons flex">
+        <div className="buttons flex">
           <div
             className="btn border border-gray-300 p-1 px-4 font-semibold cursor-pointer
        text-gray-500 ml-auto hover:bg-[#7752FE] hover:text-white"
